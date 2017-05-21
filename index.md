@@ -4,7 +4,7 @@
 
 <div dir="ltr">
 <code>
-with open(‘file.txt’, ‘w’) as f:  </code><code>
+with open(‘file.txt’, ‘w’) as f: <br>
     f.write(‘Hello!’)
 </code>
 </div>
