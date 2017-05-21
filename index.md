@@ -36,4 +36,26 @@ with object (as target):
 حال کد ابتدایی برای نوشتن در فایل را درنظر بگیرید، در این کد یک <code>object</code> از کلاس <code>TextIOWrapper</code> بازگردانده میشود و در <code>f</code> یک رفرنس به آن ذخیره میشود. سپس روی این <code>object</code> تابع <code>__enter__</code> صدا زده میشود. پس از اجرای کد داخل بلاک <code>with</code> ، روی این <code>object</code> تابع <code>__exit__</code> صدا زده میشود که با مشاهده سورس مربوط به آن متوجه میشویم که روی فایل، تابع <code>close</code>  صدا زده شده و این باعث میشود نیازی به انجام این کار به صورت <code>explicit</code> نباشد.
 </p>
 
+<p>
+اما در صورتی که در بلاک <code>with</code> اکسپشن رخ دهد چه اتفاقی میوفتد؟ ابتدا <code>with statement</code> این اکسپشن را <code>catch</code>  میکند، سپس بلافاصله تابع <code>__exit__</code> روی <code>object</code> مربوطه صدا زده میشود. در این تابع میتوان از روی <code>return value</code> یا هر روش دیگری متوجه رخ دادن اکسپشن شد و آن‌را به درستی هندل کرد. در انتها کد یک کلاس دلخواه را برای اجرای درست <code>with</code> می‌آوریم.
+</p>
+
+<div dir="ltr">
+<pre>
+<code>
+class Saved():
+    def __init__(self, val):
+        self.val = val
+    def __enter__(self):
+        self.val.save()
+        return self.val
+    def __exit__(self, type, value, traceback):  # if any exception happens, type, value and traceback send to this function.
+        self.val.restore()
+        
+with Saved(val):       # based on __enter__ method, val is returned here.
+   val.do_something()  # after this block executes __exit__ is called on val.
+</code>
+</pre>
+</div>
+
 </div>
