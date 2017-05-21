@@ -29,7 +29,7 @@ with object (as target):
 </div>
 
 <p>
-اگر در کلاس مربوط به <code>object</code> دو تابع <code>__enter__</code> و <code>__exit__</code> پیاده سازی شده باشند، این خط کد <code>valid</code> است. ابتدا <code>object</code> در یک متغیر <code>hidden</code> برای برنامه نویس ذخیره میشود (در صورتی که عبارت دل‌بخواهی <code>as target</code> آورده شده باشد، در این متغیر نیز یک رفرنس ذخیره میشود) سپس تابع <code>__enter__</code> روی <code>target</code> یا متغیر پنهانی فراخوانی میشود. سپس هر آنچه در داخل <code>block</code>  مربوطه باشد اجرا میشود (در مورد <code>exception</code> جلوتر توضیح خواهم داد) و در نهایت تابع <code>__exit__</code> روی یا متغیر پنهانی اجرا میشود.
+اگر در کلاس مربوط به <code>object</code> دو تابع <code>__enter__</code> و <code>__exit__</code> پیاده سازی شده باشند، این خط کد <code>valid</code> است. ابتدا <code>object</code> در یک متغیر <code>hidden</code> برای برنامه نویس ذخیره میشود (در صورتی که عبارت دل‌بخواهی <code>as target</code> آورده شده باشد، در این متغیر نیز یک رفرنس ذخیره میشود) سپس تابع <code>__enter__</code> روی <code>target</code> یا متغیر پنهانی فراخوانی میشود. سپس هر آنچه در داخل <code>block</code>  مربوطه باشد اجرا میشود (در مورد <code>exception</code> جلوتر توضیح خواهم داد) و در نهایت تابع <code>__exit__</code> روی <code>target</code> یا متغیر پنهانی اجرا میشود.
 </p>
 
 </div>
