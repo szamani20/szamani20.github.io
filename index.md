@@ -33,7 +33,7 @@ with object (as target):
 </p>
 
 <p>
-حال کد ابتدایی برای نوشتن در فایل را درنظر بگیرید، در این کد یک <code>object</code> از کلاس <code>TextIOWrapper</code> بازگردانده میشود و در <code>f</code> یک رفرنس به آن ذخیره میشود. سپس روی این <code>object</code> تابع <code>__enter__</code> صدا زده میشود. پس از اجرای کد داخل بلاک <code>with</code> ، روی این <code>object</code> تابع <code>__exit__</code> صدا زده میشود که با مشاهده سورس مربوط به آن متوجه میشویم که روی فایل، تابع <code>close</code> <code>explicit</code> صدا زده شده و این باعث میشود نیازی به انجام این کار به صورت      نباشد.
+حال کد ابتدایی برای نوشتن در فایل را درنظر بگیرید، در این کد یک <code>object</code> از کلاس <code>TextIOWrapper</code> بازگردانده میشود و در <code>f</code> یک رفرنس به آن ذخیره میشود. سپس روی این <code>object</code> تابع <code>__enter__</code> صدا زده میشود. پس از اجرای کد داخل بلاک <code>with</code> ، روی این <code>object</code> تابع <code>__exit__</code> صدا زده میشود که با مشاهده سورس مربوط به آن متوجه میشویم که روی فایل، تابع <code>close</code>  صدا زده شده و این باعث میشود نیازی به انجام این کار به صورت <code>explicit</code> نباشد.
 </p>
 
 </div>
