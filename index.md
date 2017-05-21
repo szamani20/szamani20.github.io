@@ -16,4 +16,20 @@ with open(‘file.txt’, ‘w’) as f:
 <p>
 در تکه کد بالا ابتدا فایل <code>file.txt</code> برای نوشتن باز میشود (با نام <code>f</code>) سپس در آن <code>Hello!</code> نوشته میشود. بستن فایل به صورت خودکار توسط <code>with statement</code> انجام میشود. اگرچه در <code>CPython</code> مکانیزم <code>garbage collection</code> به صورت شمارش رفرنس است و به احتمال زیاد تا مدت بسیار کوتاهی پس از اجرای برنامه حتی اگر فایل را نبسته باشیم (یا از <code>with</code> استفاده نکرده باشیم) خود سیستم فایل را میبندد اما این موضوع کاملا به پیاده سازی مفسر بستگی دارد و کدی که با <code>CPython</code>  مشکلی ندارد ممکن است در <code>iPython</code> پیاده سازی‌ها به مشکل برخورد کند (به اصطلاح کد <code>Pythonic</code> نیست).
 </p>
+
+<p>
+اما <code>with</code> چگونه کار میکند؟ ابتدا حالت کلی را معرفی میکنیم. در عبارت 
+</p>
+<div dir="ltr">
+<pre>
+<code>
+with object (as target):
+</code>
+</pre>
+</div>
+
+<p>
+اگر در کلاس مربوط به <code>object</code> دو تابع <code>__enter__</code> و <code>__exit__</code> پیاده سازی شده باشند، این خط کد <code>valid</code> است. ابتدا <code>object</code> در یک متغیر <code>hidden</code> برای برنامه نویس ذخیره میشود (در صورتی که عبارت دل‌بخواهی <code>as target</code> آورده شده باشد، در این متغیر نیز یک رفرنس ذخیره میشود) سپس تابع <code>__enter__</code> روی <code>target</code> یا متغیر پنهانی فراخوانی میشود. سپس هر آنچه در داخل <code>block</code>  مربوطه باشد اجرا میشود (در مورد <code>exception</code> جلوتر توضیح خواهم داد) و در نهایت تابع <code>__exit__</code> روی یا متغیر پنهانی اجرا میشود.
+</p>
+
 </div>
