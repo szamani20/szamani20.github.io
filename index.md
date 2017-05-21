@@ -2,8 +2,4 @@
 
 `code`
 
-#salam
-
-*salam
-*salam2
-*salam3
+![iPython](https://blog.szamani.ir/content/images/2017/02/iPython.JPG)
