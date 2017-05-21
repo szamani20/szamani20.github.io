@@ -1,5 +1,5 @@
 <style>
-@font-face { font-family: ff; src: url('http://s9.picofile.com/d/8295527192/4be5a756-9442-44e4-864d-98f38755c75d/IRANSans.ttf'); } 
+@font-face { font-family: ff; src: url('fo.ttf'); } 
 </style>
 <div dir="rtl" style="font-family: 'ff'"> 
 <p>
